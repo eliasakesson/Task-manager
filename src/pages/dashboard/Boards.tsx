@@ -89,17 +89,13 @@ function BoardUI(props : any) {
 
     const colors = ["#E53935", "#F57C00", "#FFEB3B", "#43A047", "#03A9F4", "#1E88E5", "#5E35B1", "#9C27B0", "#E91E63"]
 
-    function setDocument(){
-        setDoc(doc(db, 'boards/' + props.board.id), {Title: title, Color: color}, {merge: true})
-    }
-
     useEffect(() => {
         const unsub = setTimeout(() => {
-            setDocument()
+            setDoc(doc(db, 'boards/' + props.board.id), {Title: title, Color: color}, {merge: true})
         }, 1000)
 
         return () => { clearTimeout(unsub) }
-    }, [title, color])
+    }, [title, color, props.board.id])
 
     function DeleteBoard(){
         deleteDoc(doc(db, 'boards/' + props.board.id))
@@ -118,7 +114,7 @@ function BoardUI(props : any) {
             </Link>
             <button className='border-btn tr-btn' onClick={(e) => setEditMode(!editMode)}><MdOutlineEdit /></button>
             <div className='popup v-gap-s' style={{display: editMode ? "flex" : "none"}}>
-                <button className='border-btn tr-btn round-btn' onClick={() => {setDocument(); setEditMode(false)}}>X</button>
+                <button className='border-btn tr-btn round-btn' onClick={() => setEditMode(false)}>X</button>
                 <label>Title</label>
                 <input className='text-input' type="text" value={title} onChange={(e) => setTitle(e.target.value)}/>
                 <label>Color</label>

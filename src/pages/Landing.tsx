@@ -11,7 +11,7 @@ export default function Landing() {
         <header className='between'>
             <div className='r-gap'>
               <img src="" alt='' />
-              <h2>Devup</h2>
+              <h2>Taskeer</h2>
               <ul className='r-gap'>
                 <li className='link'><Link to="/">Product</Link></li>
                 <li className='link'><Link to="/">Solutions</Link></li>

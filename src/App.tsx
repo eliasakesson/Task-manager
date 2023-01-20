@@ -8,6 +8,7 @@ import Boards from './pages/dashboard/Boards';
 import Home from './pages/dashboard/Home';
 import Tasks from './pages/dashboard/Tasks';
 import QuickNotes from './pages/dashboard/QuickNotes';
+import E404 from './pages/E404';
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
       <Route path='/boards' element={<Boards />} />
       <Route path='/tasks' element={<Tasks />} />
       <Route path='/quicknotes' element={<QuickNotes />} />
+      <Route path='*' element={<E404 />} />
     </Routes>
   )
 }

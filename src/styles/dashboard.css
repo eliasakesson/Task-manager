@@ -1,0 +1,247 @@
+main{
+    flex: 1;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+
+.sidebar-container{
+    display: flex;
+}
+
+.sidebar {
+    width: 25rem;
+    min-height: 100vh;
+    background-color: #fcfcfc;
+    padding: 2rem;
+    z-index: 10;
+}
+
+.sidebar.closed{
+    width: 8rem;
+}
+
+.sidebar .top{
+    position: relative;
+}
+
+.sidebar .logo{
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--primary);
+    border-radius: 1rem;
+}
+
+.sidebar .collapse-btn{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(3rem, -50%) rotateZ(180deg);
+    width: 2rem;
+    height: 2rem;
+    background-color: white;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    outline: none;
+    cursor: pointer;
+}
+
+.sidebar.closed .collapse-btn{
+    transform: translate(3rem, -50%) rotateZ(0deg);
+}
+
+.sidebar .links{
+    list-style-type: none;
+}
+
+.sidebar .links li{
+    position: relative;
+}
+
+.sidebar .links li a, .sidebar .links li button{
+    padding: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-radius: 1rem;
+    background-color: transparent;
+    color: var(--text-p);
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.sidebar .links .selected > a, .sidebar .links .selected > button{
+    background-color: var(--primary-light);
+    color: var(--primary);
+}
+
+.sidebar .links li:not(.selected) a:hover, .sidebar .links li:not(.selected) button:hover{
+    background-color: var(--gray100);
+    color: var(--text-h);
+}
+
+.sidebar .links h3{
+    color: var(--text-p);
+}
+
+.sidebar .links svg{
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.sidebar .links ul{
+    list-style-type: none;
+    padding-left: 2rem;
+    display: none;
+}
+
+.sidebar .links .open ul{
+    display: block;
+}
+
+.sidebar.closed .links li{
+    aspect-ratio: 1/1;
+}
+
+.sidebar.closed .links li a, .sidebar.closed .links li button{
+    aspect-ratio: 1/1;
+    width: 100%;
+    justify-content: center;
+}
+
+.sidebar.closed .links li a span, .sidebar.closed .links li button span{
+    display: none;
+}
+
+/* Header */
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    height: 96px;
+    background-color: #fcfcfc;
+}
+
+/* Dashboard */   
+.dashboard h1{
+    font-size: 2.5rem;
+    color: var(--text-h);
+    margin-bottom: 1rem;
+}
+
+.dashboard .card{
+    min-width: 25rem;
+    border: 1px solid var(--light-border);
+    border-radius: 1rem;
+    background-color: white;
+    position: relative;
+    display: flex;
+}
+
+.dashboard .card a{
+    width: 100%;
+    height: 100%;
+}
+
+.dashboard .card-color{
+    width: 50%;
+    height: 1rem;
+    border-radius: 0.5rem;
+}
+
+.dashboard .card .tag{
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    padding: 0.25rem 1rem;
+}
+
+.dashboard .progress-bar{
+    width: 100%;
+    height: 0.5rem;
+    border-radius: 0.25rem;
+    background-color: var(--gray200);
+    overflow: hidden;
+}
+
+.dashboard .progress-bar .fill{
+    height: 100%;
+    width: 70%;
+    background-color: var(--primary);
+    opacity: 0.5;
+}
+
+.dashboard .skeleton{
+    background-color: transparent;
+    border: 2px solid var(--border);
+    border-style: dashed;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dashboard .skeleton h2{
+    font-size: 2rem;
+}
+
+.dashboard .skeleton span{
+    font-size: 3rem;
+    font-family: 400;
+}
+
+.dashboard .header-input{
+    background-color: transparent;
+    font-size: 1.5rem;
+    padding: 0;
+    font-weight: 600;
+    color: var(--text-h);
+}
+
+.dashboard .popup{
+    position: absolute;
+    top: 0;
+    left: calc(100% + 1rem);
+    background-color: white;
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    padding: 1rem;
+    z-index: 10;
+    white-space: nowrap;
+    display: none;
+}
+
+.popup button:not(.round-btn){
+    width: 100%;
+}
+
+.popup .color-square{
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 0.25rem;
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+
+.popup input[type="color"]{
+    appearance: none;
+    padding: 0;
+    border-radius: .5rem;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.popup input[type="color"]::-webkit-color-swatch-wrapper{
+    padding: 0;
+}
+
+.popup input[type="color"]::-webkit-color-swatch{
+    border: none;
+}
+
+.popup label{
+    font-size: 1rem;
+    font-weight: 500;
+}

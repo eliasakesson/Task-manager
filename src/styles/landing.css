@@ -1,0 +1,97 @@
+/* Typography */
+
+.landing h1 {
+    font-size: 7rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.landing h2 {
+    font-size: 5rem;
+    font-weight: 700;
+}
+
+.landing h3 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.landing p {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.landing .highlight{
+    position: relative;
+}
+
+.landing .highlight::before {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 25%;
+    transform: translateY(150%);
+    background-color: #2196F350;
+    margin: 2rem 0;
+    z-index: -1;
+}
+
+.landing .icon {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 1rem;
+    fill: #000;
+    background-color: var(--primary-light);
+    padding: 1rem;
+}
+
+.landing header{
+    padding: 0 5rem;
+    height: 96px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.landing header h2 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.landing header ul.r-gap{
+    list-style: none;
+    margin-left: 5rem;
+    font-size: 1.2rem;
+}
+
+.landing .header-margin{
+    margin-top: 10rem;
+}
+
+.landing .hero p{
+    max-width: 60ch;
+}
+
+.landing .hero a{
+    font-size: 1.25rem;
+}
+
+.landing .half-img{
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    position: relative;
+}
+
+.landing .img-half-bg{
+    background-color: #2196F325;
+    position: absolute;
+    height: 100%;
+    width: 80%;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}

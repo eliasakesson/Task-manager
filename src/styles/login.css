@@ -1,0 +1,84 @@
+.login .left{
+    background: linear-gradient(225deg, var(--primary-light), var(--primary));
+}
+
+.login .right{
+    flex: 2;
+    justify-content: center;
+    position: relative;
+}
+
+.login .right p {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.login h1{
+    font-size: 4rem;
+}
+
+.login form{
+    width: 100%;
+    max-width: 500px;
+}
+
+.login form input {
+    font-size: 1.25rem;
+    padding: 1rem 2rem;
+}
+
+.login form button{
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+.login .divider{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.login .divider span{
+    flex: 1;
+    height: 1px;
+    background-color: var(--border);
+}
+
+.login .divider p{
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--text-p);
+}
+
+@media screen and (max-width: 992px){
+    .login .left{
+        display: none;
+    }
+
+    .login .right{
+        flex: 1;
+        align-items: center;
+    }
+
+    .login h1{
+        font-size: 3rem;
+    }
+
+    .login form{
+        max-width: 400px;
+    }
+
+    .login form input {
+        font-size: 1.1rem;
+        padding: 1rem 1.5rem;
+    }
+
+    .login form button{
+        font-size: 1.1rem;
+    }
+
+    .login .divider p{
+        font-size: 1.1rem;
+    }
+}

@@ -1,13 +1,91 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body{
+	background-color: #f6f8fa;
+ 	min-height: 100vh;
+}
+
+:root {
+	--primary: var(--blue500);
+	--primary-light: var(--blue50);
+	--secondary: var(--red500);
+	--text-h: var(--gray900);
+	--text-p: var(--gray700);
+	--text-link: var(--blue500);
+	--text-link-hover: var(--blue700);
+	--border: var(--gray300);
+	--light-border: var(--gray200);
+
+	--gray50: #FAFAFA;
+	--gray100: #F5F5F5;
+	--gray200: #EEEEEE;
+	--gray300: #E0E0E0;
+	--gray400: #BDBDBD;
+	--gray500: #9E9E9E;
+	--gray600: #757575;
+	--gray700: #616161;
+	--gray800: #424242;
+	--gray900: #212121;
+
+	--blue50: #E3F2FD;
+	--blue100: #BBDEFB;
+	--blue200: #90CAF9;
+	--blue300: #64B5F6;
+	--blue400: #42A5F5;
+	--blue500: #2196F3;
+	--blue600: #1E88E5;
+	--blue700: #1976D2;
+	--blue800: #1565C0;
+	--blue900: #0D47A1;
+
+	--purple50: #F3E5F5;
+	--purple100: #E1BEE7;
+	--purple200: #CE93D8;
+	--purple300: #BA68C8;
+	--purple400: #AB47BC;
+	--purple500: #9C27B0;
+	--purple600: #8E24AA;
+	--purple700: #7B1FA2;
+	--purple800: #6A1B9A;
+	--purple900: #4A148C;
+
+	--red50: #FFEBEE;
+	--red100: #FFCDD2;
+	--red200: #EF9A9A;
+	--red300: #E57373;
+	--red400: #EF5350;
+	--red500: #F44336;
+	--red600: #E53935;
+	--red700: #D32F2F;
+	--red800: #C62828;
+	--red900: #B71C1C;
+
+	--green50: #E8F5E9;
+	--green100: #C8E6C9;
+	--green200: #A5D6A7;
+	--green300: #81C784;
+	--green400: #66BB6A;
+	--green500: #4CAF50;
+	--green600: #43A047;
+	--green700: #388E3C;
+	--green800: #2E7D32;
+	--green900: #1B5E20;
+
+	--orange50: #FFF3E0;
+	--orange100: #FFE0B2;
+	--orange200: #FFCC80;
+	--orange300: #FFB74D;
+	--orange400: #FFA726;
+	--orange500: #FF9800;
+	--orange600: #FB8C00;
+	--orange700: #F57C00;
+	--orange800: #EF6C00;
+	--orange900: #E65100;
 }

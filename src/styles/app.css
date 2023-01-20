@@ -1,0 +1,445 @@
+main{
+  flex: 6;
+  min-height: 100vh;
+}
+
+header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  height: 96px;
+  border-bottom: 1px solid var(--border);
+}
+
+section{
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+section h1{
+  font-size: 2.5rem;
+}
+
+.lists{
+  display: flex;
+  gap: 24px;
+}
+
+.list{
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.list-header{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+}
+
+.list-count{
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--primary);
+  background-color: var(--primary-light);
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-list{
+  height: fit-content;
+  width: fit-content;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 4px 24px;
+  font-size: 1rem;
+  background-color: white;
+}
+
+.tasks{
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.task{
+  border: 1px solid var(--light-border);
+  border-radius: 4px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.task-header{
+  padding: 16px;
+  position: relative;
+}
+
+.tags{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.tags .tag{
+  padding: 4px 8px;
+  border-radius: 100px;
+  border: 1px solid var(--border);
+  font-size: 0.75rem;
+  min-width: 32px;
+  height: fit-content;
+}
+
+.add-task{
+  border: none;
+  outline: none;
+  background-color: transparent;
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  position: absolute;
+  right: 0;
+  font-size: 1rem;
+}
+
+.modal-bg{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.large-popup{
+  height: 80vh;
+  aspect-ratio: 3 / 4;
+  background-color: var(--gray100);
+  border-radius: 8px;
+  padding: 4rem;
+  position: relative;
+  overflow-y: auto;
+}
+
+.large-popup h2{
+  font-size: 2rem;
+}
+
+.large-popup label{
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-p);
+}
+
+.large-popup .tag{
+  font-size: 1rem;
+}
+
+.add-tag{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  aspect-ratio: 1;
+  border-radius: 100px;
+  border: 1px solid var(--border);
+  outline: none;
+  background-color: transparent;
+}
+
+.btn:hover{
+  background-color: var(--gray200);
+}
+
+.btn:active{
+  background-color: var(--gray300);
+}
+
+.close-btn{
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+  color: var(--gray600);
+  outline: none;
+  border: none;
+  border-radius: 100px;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.title-input{
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.task-content{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px 16px;
+}
+
+.task-content > li {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 0;
+  gap: 8px;
+}
+
+.task-content div{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.task-content p{
+  flex: 1;
+}
+
+.task-content input[type="text"]{
+  flex: 1;
+  outline: none;
+}
+
+.task-content input[type="checkbox"]{
+  width: 16px;
+  height: 16px;
+}
+
+.large-popup button:not(.topright-iconbtn){
+  padding: 8px 16px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background-color: white;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.large-popup input[type="color"]{
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background-color: white;
+  width: fit-content;
+  cursor: pointer;
+  min-width: 120px;
+  height: 38px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.task-content .remove-btn{
+  color: var(--primary);
+  background-color: var(--primary-light);
+  padding: 8px 8px 2px 8px;
+  border-radius: 100px;
+  border: none;
+  margin: 0;
+}
+
+.task-content .remove-btn svg{
+  width: 12px;
+  height: 12px;
+}
+
+.add-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  list-style-type: none;
+}
+
+.add-content button {
+  padding: 8px 16px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background-color: white;
+}
+
+.boards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.board {
+  width: 400px;
+  height: 300px;
+  border: 1px solid var(--light-border);
+  border-radius: 4px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-radius: 8px;
+  position: relative;
+  margin-top: 64px;
+}
+
+.board a {
+  width: 100%;
+  height: 100%;
+  padding: 24px;
+}
+
+.board.add {
+  background-color: transparent;
+  border: 2px solid var(--border);
+  border-style: dashed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  cursor: pointer;
+}
+
+.board.add span{
+  font-size: 3rem;
+  font-weight: 300;
+  color: var(--primary);
+}
+
+.board.add h2{
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-p);
+}
+
+.board-color{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 100%;
+  border-radius: 8px 0 0 8px;
+  z-index: 0;
+}
+
+.topright-iconbtn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 32px;
+  height: 32px;
+  border-radius: 100px;
+  border: 1px solid var(--border);
+  outline: none;
+  background-color: var(--gray100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.local-popup {
+  position: absolute;
+  top: 8px;
+  left: calc(100% - 8px);
+  background-color: var(--gray50);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 100;
+  overflow: hidden;
+  border-radius: 8px;
+  padding: 8px;
+  gap: 8px;
+  cursor: default;
+}
+
+.list-btn {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  padding: 8px;
+  width: 100%;
+  white-space: nowrap;
+  text-align: left;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.color-list{
+  display: flex;
+  gap: 8px;
+  list-style-type: none;
+}
+
+.color-list li{
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.large-popup .btn.delete{
+  background-color: #ff5f5f50;
+  color: #ff5f5f;
+}
+
+.large-popup .btn.btn-primary{
+  background-color: var(--primary-light);
+  color: var(--primary);
+}
+
+.skeleton {
+  background-color: transparent;
+  border: 2px solid var(--border);
+  border-style: dashed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.skeleton h3{
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-p);
+  margin: 0;
+}
+
+.skeleton button{
+  background-color: var(--primary-light);
+  color: var(--primary);
+  border: none;
+  border-radius: 4px;
+  padding: 8px 32px;
+  width: fit-content;
+  cursor: pointer;
+  outline: none;
+  transition: 0.25s;
+}
+
+.skeleton button:hover{
+  background-color: var(--primary);
+  color: white;
+}
+
+.skeleton button:active{
+  background-color: var(--primary-light);
+  color: white;
+}

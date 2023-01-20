@@ -11,7 +11,7 @@ import { useAuthState } from 'react-firebase-hooks/auth'
 
 export default function Login() {
 
-  const [user, loading, error] = useAuthState(auth)
+  const [user] = useAuthState(auth)
 
   function SignInWithGoogle(e : React.MouseEvent<HTMLButtonElement>){
     e.preventDefault();

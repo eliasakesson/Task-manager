@@ -10,7 +10,7 @@ import ListItem from './ListItem';
 export default function List(props : ListProps) {
 
     // Get list document from Firestore
-    const [document, loading, error] = useDocumentOnce(doc(db, 'boards/' + props.boardId + '/lists', props.documentId))
+    const [document, loading] = useDocumentOnce(doc(db, 'boards/' + props.boardId + '/lists', props.documentId))
 
     const [docData, setDocData] = useState<any>(null)
 
@@ -21,7 +21,7 @@ export default function List(props : ListProps) {
     }, [document])
 
     // Get tasks collection from Firestore
-    const [tasks, tasksLoading, tasksError] = useCollection(query(collection(db, 'boards/' + props.boardId + '/lists/' + props.documentId + "/tasks"), orderBy("Order", "desc")), {
+    const [tasks] = useCollection(query(collection(db, 'boards/' + props.boardId + '/lists/' + props.documentId + "/tasks"), orderBy("Order", "desc")), {
         snapshotListenOptions: { includeMetadataChanges: true },
     })
 
@@ -85,7 +85,7 @@ export default function List(props : ListProps) {
                 {taskList.length > 0 && taskList.map((task, i) => (
                     <Task key={i} i={i} {...task} path={`boards/${props.boardId}/lists/${props.documentId}/tasks/`} />
                 ))}
-                {taskList.length == 0 && 
+                {taskList.length === 0 && 
                 <li className='p card center v-gap-s skeleton'>
                     <h3>No tasks</h3>
                     <button className='black-btn' onClick={() => addTask()}>Add Task</button>
@@ -103,7 +103,7 @@ interface ListProps {
 
 function Task(props : TaskProps) {
     // Get content collection from Firestore
-    const [content, contentLoading, contentError] = useCollection(collection(db, props.path + props.id + "/content"), {
+    const [content] = useCollection(collection(db, props.path + props.id + "/content"), {
         snapshotListenOptions: { includeMetadataChanges: true },
     })
 

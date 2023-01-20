@@ -8,7 +8,7 @@ import { db } from '../../firebase';
 
 export default function Board() {
 
-  const [searchParams, setSearchParams] = useSearchParams()
+  const [searchParams] = useSearchParams()
   const boardId = searchParams.get('id') || ''
 
   const [lists] = useCollection(collection(db, 'boards/' + boardId + '/lists'), {

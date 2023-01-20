@@ -19,7 +19,7 @@ export default function Sidebar() {
   }, [])
 
   // Get boards from database
-  const [boards, loading, error] = useCollection(collection(db, 'boards'), {
+  const [boards] = useCollection(collection(db, 'boards'), {
     snapshotListenOptions: { includeMetadataChanges: true },
   });
 

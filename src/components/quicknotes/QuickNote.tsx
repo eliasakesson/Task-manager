@@ -5,7 +5,7 @@ import { db } from '../../firebase'
 
 export default function QuickNote(props: QuickNoteProps) {
 
-  const [note, setNote] = useDocumentOnce(doc(db, props.path + props.id))
+  const [note] = useDocumentOnce(doc(db, props.path + props.id))
 
   const [title, setTitle] = useState('')
   const [text, setText] = useState('')
@@ -28,7 +28,7 @@ export default function QuickNote(props: QuickNoteProps) {
     return () => {
       clearTimeout(unsub)
     }
-  }, [title, text])
+  }, [title, text, props.id, props.path])
 
   return (
     <div>

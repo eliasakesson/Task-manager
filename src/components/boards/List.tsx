@@ -63,7 +63,7 @@ export default function List(props : ListProps) {
         return () => {
             clearTimeout(unsub)
         }
-    }, [listName])
+    }, [listName, props.boardId, props.documentId])
 
     const handleListDelete = () => {
         deleteDoc(doc(db, `boards/${props.boardId}/lists/${props.id}`))
@@ -142,7 +142,7 @@ function Task(props : TaskProps) {
         return () => {
             clearTimeout(unsub)
         }
-    }, [taskName])
+    }, [taskName, props.path, props.id])
 
     return (
         <li className='card v-gap p'>

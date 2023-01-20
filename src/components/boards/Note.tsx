@@ -17,6 +17,8 @@ export default function Note(props : NoteProps) {
     const [note, setNote] = useState('')
 
     useEffect(() => {
+        if (!note) return;
+
         const unsub = setTimeout(() => {
             setDoc(doc(db, props.path + props.id), {content: note}, {merge: true})
         }, 1000);
@@ -24,7 +26,7 @@ export default function Note(props : NoteProps) {
         return () => {
             clearTimeout(unsub);
         }
-    }, [note])
+    }, [note, props.id, props.path])
 
     const handleDocDelete = () => {
         deleteDoc(doc(db, props.path + props.id));

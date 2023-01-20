@@ -19,6 +19,8 @@ export default function ListItem(props: ListItemProps) {
     const [lists, setLists] = useState([{title: '', completed: false}] as ListItemItem[])
 
     useEffect(() => {
+        if (!lists) return;
+
         const unsub = setTimeout(() => {
             setDoc(doc(db, props.path + props.id), {content: lists}, {merge: true})
         }, 1000);
@@ -26,7 +28,7 @@ export default function ListItem(props: ListItemProps) {
         return () => {
             clearTimeout(unsub);
         }
-    }, [lists])
+    }, [lists, props.id, props.path])
 
     const handleListKeyDown = (event: React.KeyboardEvent<HTMLInputElement>, index : number) => {
         if (event.key === 'Enter'){

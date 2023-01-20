@@ -19,6 +19,8 @@ export default function Todo(props: TodoProps) {
     const [todos, setTodos] = useState([{title: '', completed: false}] as TodoItem[])
 
     useEffect(() => {
+        if (!todos) return;
+
         const unsub = setTimeout(() => {
             setDoc(doc(db, props.path + props.id), {content: todos}, {merge: true})
         }, 1000);
@@ -26,7 +28,7 @@ export default function Todo(props: TodoProps) {
         return () => {
             clearTimeout(unsub);
         }
-    }, [todos])
+    }, [todos, props.id, props.path])
 
     const handleTodoKeyDown = (event: React.KeyboardEvent<HTMLInputElement>, index : number) => {
         if (event.key === 'Enter'){
